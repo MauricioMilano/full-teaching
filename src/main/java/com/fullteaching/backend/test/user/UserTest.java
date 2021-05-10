@@ -1,4 +1,4 @@
-package user;
+package com.fullteaching.backend.test.user;
 
 import com.fullteaching.backend.user.User;
 import org.junit.jupiter.api.*;

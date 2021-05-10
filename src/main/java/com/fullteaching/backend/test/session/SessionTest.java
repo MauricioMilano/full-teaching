@@ -1,10 +1,7 @@
-package session;
+package com.fullteaching.backend.test.session;
 
 import com.fullteaching.backend.session.Session;
-import com.fullteaching.backend.user.User;
-import com.fullteaching.backend.course.Course;
 import org.junit.jupiter.api.*;
-import java.util.List;
 @DisplayName("Classe para teste da Session")
 public class SessionTest {
     @Test

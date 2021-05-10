@@ -1,7 +1,8 @@
-package course;
+package com.fullteaching.backend.test.course;
 import com.fullteaching.backend.course.Course;
 import com.fullteaching.backend.coursedetails.CourseDetails;
 import com.fullteaching.backend.user.User;
+import org.mockito.Mockito;
 import org.junit.jupiter.api.*;
 @DisplayName("Classe para teste do Curso")
 public class CourseTest {
@@ -11,8 +12,7 @@ public class CourseTest {
 
     @BeforeAll
     public static void initialize() {
-        String [] roles = {"Professor"};
-        professor = new User("Professor_mock","password","p_mock", null,  roles);
+        professor = Mockito.mock(User.class);
     }
 
     @Test
@@ -29,8 +29,7 @@ public class CourseTest {
         Assertions.assertNotNull(c.getAttenders(),"Erro ao criar curso");
         Assertions.assertNull(c.getCourseDetails(), "Erro ao criar curso");
 
-        CourseDetails cd = new CourseDetails();
-
+        CourseDetails cd = Mockito.mock(CourseDetails.class);
         Course c3 = new Course(titulo_curso, foto, professor, cd);
         Assertions.assertNotNull(c3, "Erro ao criar curso");
         Assertions.assertTrue(c3.getTeacher().equals(professor), "Erro ao validar professor do curso");
@@ -53,14 +52,14 @@ public class CourseTest {
         Assertions.assertTrue(c.getImage().equals(foto), "Erro ao validar imagem do curso");
         c.setTeacher(professor);
         Assertions.assertTrue(c.getTeacher().equals(professor),"Erro ao validar professor");
-        c.setCourseDetails(new CourseDetails());
+        c.setCourseDetails(Mockito.mock(CourseDetails.class));
         Assertions.assertNotNull(c.getCourseDetails(), "Erro ao validar Detalhes do curso");
     }
 
 
     @Test
     public void validandoIgualdadeDosCursos() {
-        CourseDetails cd = new CourseDetails();
+        CourseDetails cd = Mockito.mock(CourseDetails.class);
 
         Course c1 = new Course(titulo_curso, foto, professor, cd);
         c1.setId((long) Math.floor((Math.random()*Long.MAX_VALUE )));
