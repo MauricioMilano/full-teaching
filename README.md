@@ -17,9 +17,9 @@ docker-compose up
 
 depois execute o projeto
 ```sh
+cd target
 java -jar full-teaching-0.6-SNAPSHOT.war
 ```
-
 Após isso, vá para pasta do angular,baixe as dependencias e execute o cypress
 ```sh
 cd src/main/angular
