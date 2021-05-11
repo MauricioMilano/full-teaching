@@ -1,3 +1,33 @@
+# Qualidade e Teste
+
+### Alunos
+- **Amanda Tamires Inacio Silva**
+	Matricula: 115083004
+- **Mauricio Milano Santos da Silva Junior**
+  Matricula: 618083137
+- **Shaiana Zan Pereira**
+	Matricula 117083033
+## Teste Funcional
+Para executar o teste, vamos inicialmente rodar o projeto.
+
+Para isso, suba o docker do banco de dados
+```sh
+docker-compose up
+```
+
+depois execute o projeto
+```sh
+java -jar full-teaching-0.6-SNAPSHOT.war
+```
+
+Após isso, vá para pasta do angular,baixe as dependencias e execute o cypress
+```sh
+cd src/main/angular
+npm install
+npx cypress open
+```
+
+Após isso, rode os testes
 # FullTeaching
 
 [![Build Status](https://travis-ci.org/pabloFuente/full-teaching.png?branch=master)](https://travis-ci.org/pabloFuente/full-teaching)
@@ -46,7 +76,7 @@ To get FullTeaching working in the easiest way, you just have to download the fi
 
 You will need some user data to test the features. These are the default users for the demo:
 - Email: `teacher@gmail.com`   Pass: `pass`  (Teacher account)
-- Email: `student1@gmail.com`  Pass: `pass`  (Student account) 
+- Email: `student1@gmail.com`  Pass: `pass`  (Student account)
 - Email: `student2@gmail.com`  Pass: `pass`  (Student account)
 
 
